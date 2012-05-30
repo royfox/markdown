@@ -51,8 +51,6 @@ function Markdown($text) {
 		$parser = new $parser_class;
 	}
 
-    $text = str_replace("_", "\_", $text); //escape underscores
-
 	# Transform text using parser.
 	return $parser->transform($text);
 }
@@ -1170,7 +1168,7 @@ class Markdown_Parser {
 			# in current context.
 			#
 			$token_re = $this->em_strong_prepared_relist["$em$strong"];
-
+			
 			#
 			# Each loop iteration search for the next emphasis token. 
 			# Each token is then passed to handleSpanToken.
